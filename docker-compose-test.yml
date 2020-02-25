@@ -1,0 +1,24 @@
+version: "3.7"
+services: 
+  server:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    ports:
+      - "4001:4000"
+    volumes:
+      - .:/usr/src/app
+    depends_on: 
+      - pgsql
+  pgsql:
+    build: 
+      context: ./postgresql
+      dockerfile: Dockerfile
+    volumes:
+      # postgres 볼륨은 루트에 있어야함. c/User/postgres
+      # 근데 ./pgdata는 에 data directory "/var/lib/postgresql/data" has wrong 이런 에러나서 이런식으로 수정..
+      - pgdata:/var/lib/postgresql/data/pgdata
+    ports: 
+      - "5432:5432"
+volumes: 
+  pgdata:

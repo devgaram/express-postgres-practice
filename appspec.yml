@@ -3,3 +3,7 @@ os: linux
 files:
   - source:  /
     destination: /home/ec2-user/build/
+hooks:
+  AfterInstall: # 배포 후
+    - location: ./config/execute-deploy.sh
+      timeout: 180

@@ -6,12 +6,12 @@ const logger = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 require('dotenv').config();
-const api = require('./routes/api');
-const db = require('./models');
+//const api = require('./routes/api');
+//const db = require('./models');
 
-if (process.env.NODE_ENV !== 'test') {
-  db.connectDb();
-}
+// if (process.env.NODE_ENV !== 'test') {
+//   db.connectDb();
+// }
 
 const app = express();
 
@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/api', api);
+//app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
