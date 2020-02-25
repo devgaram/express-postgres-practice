@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.send('Hello World!2');
 });
 //app.use('/api', api);
 
