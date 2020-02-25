@@ -7,4 +7,4 @@ services:
     volumes: 
       - .:/usr/src/app
     ports:
-      - "4001:4000"  
+      - "3001:3000"  
