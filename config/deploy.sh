@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_APP_NAME=node-koa-server
+DOCKER_APP_NAME=blog-server
 
 EXIST_BLUE=$(docker-compose -p ${DOCKER_APP_NAME}-blue -f docker-compose.blue.yml ps | grep Up)
 
