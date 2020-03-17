@@ -1,0 +1,21 @@
+version: "3.7"
+services: 
+  pgsql:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+    ports: 
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 5555:80
+    environment: 
+      - PGADMIN_DEFAULT_EMAIL=test@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=1234
+    depends_on: 
+      - pgsql
+volumes: 
+  pgdata:
