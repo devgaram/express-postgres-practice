@@ -13,9 +13,12 @@ module.exports = {
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 2018,
+        "sourceType": "module"
     },
     "rules": {
+      "semi": ["error", "always"],
+      "quotes": ["error", "single"],
       "node/exports-style": ["error", "module.exports"],
       "node/file-extension-in-import": ["error", "always"],
       "node/prefer-global/buffer": ["error", "always"],

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-module.exports.verifyToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   try {
     const auth = req.headers.authorization.split(' ');
     if (auth[1] != 'undefined') {
@@ -23,6 +23,10 @@ module.exports.verifyToken = (req, res, next) => {
     return res.status(401).json({
       code: 401,
       message: '유효하지 않은 토큰입니다'
-    })
+    });
   }
-}
+};
+
+module.exports = {
+  verifyToken
+};
